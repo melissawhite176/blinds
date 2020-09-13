@@ -1,17 +1,77 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+import { findMatch } from './list.js'
+import BlindsForm from './components/BlindsForm'
+import BlindResult from './components/BlindResult'
+
+const Header = () => {
+  return (
+    <div>
+      <h1>Trim-N-Take Blinds</h1>
+    </div>
+  )
+}
+
+// const Measurement = (props) => {
+//   return (
+//     <div>
+//       <p>{props.width} x {props.length}</p>
+//     </div>
+//   )
+// }
+
+const App = () => {
+  const [newWidth, setWidth] = useState(32.22)
+  const [newLength, setLength] = useState(64.23)
+  const [blind, setBlind] = useState(null)
+  const [errorMessage, setErrorMessage] = useState('')
+
+
+  const addMeasurements = (event) => {
+    event.preventDefault()
+    if (isNaN(newWidth) || isNaN(newLength)) {
+      setErrorMessage('Need a valid number')
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
+    } else {
+      setBlind(findMatch(newWidth, newLength))
+    }
+  }
+
+  const handleWidthChange = (event) => {
+    console.log(event.target.value)
+    setWidth(parseFloat(event.target.value))
+  }
+  const handleLengthChange = (event) => {
+    console.log(event.target.value)
+    setLength(parseFloat(event.target.value))
+  }
+
+
+
+
+  return (
+    <>
+      <Header />
+      <h3>Your blinds measurements:</h3>
+      <BlindsForm addMeasurements={addMeasurements}
+        handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
+      <p>W: {newWidth > 0 ? newWidth : 'need valid number'}</p>
+      <p>L: {newLength > 0 ? newLength : 'need valid number'}</p>
+      <h3>Results</h3>
+      {errorMessage
+        ? <p>{errorMessage}</p>
+        : (blind
+          ? <BlindResult blind={blind} />
+          : <p>Enter width and length, then click on save.</p>
+        )
+      }
+    </>
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+)
