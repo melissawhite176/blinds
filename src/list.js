@@ -305,6 +305,8 @@ function findMatch(width, length) {
       width: commonResult.common,
       actualWidth: commonResult.actual,
       length: lengthResult.length,
+      measuredWidth: width,
+      measuredLength: length,
       price: lengthResult.price
     }
   } else {

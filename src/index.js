@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { findMatch } from './list.js'
 import BlindsForm from './components/BlindsForm'
-import BlindMeasurements from './components/BlindMeasurements'
+// import BlindMeasurements from './components/BlindMeasurements'
 import BlindResult from './components/BlindResult'
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
 const App = () => {
   const [newWidth, setWidth] = useState(32.22)
   const [newLength, setLength] = useState(64.23)
-  const [blind, setBlind] = useState(null)
+  const [blinds, setBlinds] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
 
@@ -36,7 +36,7 @@ const App = () => {
         setErrorMessage(null)
       }, 5000)
     } else {
-      setBlind(findMatch(newWidth, newLength))
+      setBlinds(blinds.concat(findMatch(newWidth, newLength)))
     }
   }
 
@@ -58,12 +58,12 @@ const App = () => {
       <h3>Your blinds measurements:</h3>
       <BlindsForm addMeasurements={addMeasurements}
         handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
-      <BlindMeasurements newWidth={newWidth} newLength={newLength} />
+      {/* <BlindMeasurements newWidth={newWidth} newLength={newLength} /> */}
       <h3>Results</h3>
       {errorMessage
         ? <p>{errorMessage}</p>
-        : (blind
-          ? <BlindResult blind={blind} />
+        : (blinds.length > 0
+          ? blinds.map(blind => <BlindResult blind={blind} />)
           : <p>Enter width and length, then click on save.</p>
         )
       }
