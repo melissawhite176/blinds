@@ -7,6 +7,7 @@ const BlindResult = ({ blind }) => {
                 <em>Error:</em> {blind.error}
             </p>
             : <p>
+                <em>Description:</em> {blind.description}<br />
                 <em>Measured width:</em> {blind.measuredWidth} in <br />
                 <em>Measured length:</em> {blind.measuredLength} in <br />
                 <em>Common width:</em> {blind.width} in <br />

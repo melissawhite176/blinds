@@ -260,7 +260,7 @@ const blinds = [
 let _idCount = 0
 
 
-function findMatch(width, length) {
+function findMatch(width, length, description) {
   console.log('Your blind is:', width, 'x', length, 'inches')
   const sorted = [...blinds].sort((a, b) => a.common - b.common)
 
@@ -309,6 +309,7 @@ function findMatch(width, length) {
       length: lengthResult.length,
       measuredWidth: width,
       measuredLength: length,
+      description: description,
       price: lengthResult.price
     }
   } else {
