@@ -61,7 +61,7 @@ const App = () => {
         <p>{errorMessage}</p>
       }
       {blinds.length > 0
-        ? blinds.map(blind => <BlindResult blind={blind} />)
+        ? blinds.map(blind => <BlindResult key={blind.id} blind={blind} />)
         : <p>Enter width and length, then click on save.</p>
       }
     </>
