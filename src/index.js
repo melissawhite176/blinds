@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { findMatch } from './list.js'
 import BlindsForm from './components/BlindsForm'
+import BlindMeasurements from './components/BlindMeasurements'
 import BlindResult from './components/BlindResult'
 
 const Header = () => {
@@ -57,8 +58,7 @@ const App = () => {
       <h3>Your blinds measurements:</h3>
       <BlindsForm addMeasurements={addMeasurements}
         handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
-      <p>W: {newWidth > 0 ? newWidth : 'need valid number'}</p>
-      <p>L: {newLength > 0 ? newLength : 'need valid number'}</p>
+      <BlindMeasurements newWidth={newWidth} newLength={newLength} />
       <h3>Results</h3>
       {errorMessage
         ? <p>{errorMessage}</p>
