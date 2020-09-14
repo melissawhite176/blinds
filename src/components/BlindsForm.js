@@ -1,6 +1,8 @@
 import React from 'react'
+import { green } from '@material-ui/core/colors';
+import Icon from '@material-ui/core/Icon';
 
-const BlindsForm = ({addMeasurements, handleDescriptionChange, handleWidthChange, handleLengthChange }) => {
+const BlindsForm = ({ addMeasurements, handleDescriptionChange, handleWidthChange, handleLengthChange }) => {
     return (
         <form onSubmit={addMeasurements}>
             <div>
@@ -16,7 +18,7 @@ const BlindsForm = ({addMeasurements, handleDescriptionChange, handleWidthChange
                 <input placeholder='61.57' onChange={handleLengthChange} />
             </div>
             <div>
-                <button type="submit">Submit</button>
+                <Icon style={{ color: green[500] }} onClick={addMeasurements}>add_circle</Icon>
             </div>
         </form>
     )

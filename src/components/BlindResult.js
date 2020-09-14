@@ -1,6 +1,8 @@
 import React from 'react'
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-const BlindResult = ({ blind, deleteBlind}) => {
+const BlindResult = ({ blind, deleteBlind }) => {
     return (
         blind.error
             ? <p>
@@ -14,7 +16,9 @@ const BlindResult = ({ blind, deleteBlind}) => {
                 <em>Actual width:</em> {blind.actualWidth} in <br />
                 <em>Length:</em> {blind.length} in <br />
                 <em>Price:</em> ${blind.price.toFixed(2)} <br />
-                <button onClick={() => deleteBlind(blind.id)}>delete</button>
+                <IconButton aria-label="delete" onClick={() => deleteBlind(blind.id)}>
+                    <DeleteIcon />
+                </IconButton>
             </p>
     )
 }
