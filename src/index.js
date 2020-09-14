@@ -42,6 +42,12 @@ const App = () => {
     }
   }
 
+  const deleteBlind = (id) => {
+    console.log('id:', id)
+    const newList = blinds.filter(blind => blind.id !== id)
+    setBlinds(newList)
+  }
+
   const handleWidthChange = (event) => {
     console.log(event.target.value)
     setWidth(parseFloat(event.target.value))
@@ -66,7 +72,7 @@ const App = () => {
         <p>{errorMessage}</p>
       }
       {blinds.length > 0
-        ? blinds.map(blind => <BlindResult key={blind.id} blind={blind} />)
+        ? blinds.map(blind => <BlindResult key={blind.id} blind={blind} deleteBlind={deleteBlind} />)
         : <p>Enter width and length, then click on save.</p>
       }
       <h3>Total</h3>

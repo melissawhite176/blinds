@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BlindResult = ({ blind }) => {
+const BlindResult = ({ blind, deleteBlind}) => {
     return (
         blind.error
             ? <p>
@@ -14,6 +14,7 @@ const BlindResult = ({ blind }) => {
                 <em>Actual width:</em> {blind.actualWidth} in <br />
                 <em>Length:</em> {blind.length} in <br />
                 <em>Price:</em> ${blind.price.toFixed(2)} <br />
+                <button onClick={() => deleteBlind(blind.id)}>delete</button>
             </p>
     )
 }
