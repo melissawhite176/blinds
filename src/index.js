@@ -13,14 +13,6 @@ const Header = () => {
   )
 }
 
-// const Measurement = (props) => {
-//   return (
-//     <div>
-//       <p>{props.width} x {props.length}</p>
-//     </div>
-//   )
-// }
-
 const App = () => {
   const [newWidth, setWidth] = useState(32.22)
   const [newLength, setLength] = useState(64.23)
@@ -30,13 +22,22 @@ const App = () => {
 
   const addMeasurements = (event) => {
     event.preventDefault()
+    setErrorMessage(null)
     if (isNaN(newWidth) || isNaN(newLength)) {
       setErrorMessage('Need a valid number')
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
     } else {
-      setBlinds(blinds.concat(findMatch(newWidth, newLength)))
+      const match = findMatch(newWidth, newLength)
+      if (match.error) {
+        setErrorMessage(match.error)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
+      } else {
+        setBlinds(blinds.concat(match))
+      }
     }
   }
 
@@ -49,23 +50,19 @@ const App = () => {
     setLength(parseFloat(event.target.value))
   }
 
-
-
-
   return (
     <>
       <Header />
       <h3>Your blinds measurements:</h3>
       <BlindsForm addMeasurements={addMeasurements}
         handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
-      {/* <BlindMeasurements newWidth={newWidth} newLength={newLength} /> */}
       <h3>Results</h3>
-      {errorMessage
-        ? <p>{errorMessage}</p>
-        : (blinds.length > 0
-          ? blinds.map(blind => <BlindResult blind={blind} />)
-          : <p>Enter width and length, then click on save.</p>
-        )
+      {errorMessage &&
+        <p>{errorMessage}</p>
+      }
+      {blinds.length > 0
+        ? blinds.map(blind => <BlindResult blind={blind} />)
+        : <p>Enter width and length, then click on save.</p>
       }
     </>
   )
