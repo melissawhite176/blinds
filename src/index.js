@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom'
 import { findMatch } from './list.js'
 import BlindsForm from './components/BlindsForm'
 import BlindResultTable from './components/BlindResultTable.js'
+import Typography from '@material-ui/core/Typography';
+import './index.css'
+
 
 const Header = () => {
   return (
-    <div>
-      <h1>Trim-N-Take Blinds</h1>
-    </div>
+    <Typography variant="h2" gutterBottom>
+      Trim-N-Take Blinds
+    </Typography>
   )
 }
 
@@ -42,38 +45,55 @@ const App = () => {
   }
 
   const deleteBlind = (id) => {
-    console.log('id:', id)
     const newList = blinds.filter(blind => blind.id !== id)
     setBlinds(newList)
   }
 
   const handleWidthChange = (event) => {
-    console.log(event.target.value)
     setWidth(parseFloat(event.target.value))
   }
   const handleLengthChange = (event) => {
-    console.log(event.target.value)
     setLength(parseFloat(event.target.value))
   }
   const handleDescriptionChange = (event) => {
-    console.log(event.target.value)
     setDescription(event.target.value)
   }
 
   return (
     <>
       <Header />
-      <h3>Your blinds measurements:</h3>
-      <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
-        handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
-      <h3>Results</h3>
-      {errorMessage &&
-        <p>{errorMessage}</p>
-      }
-      <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
-      <h3>Total</h3>
-      <p>${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}</p>
 
+      <section>
+        <Typography variant="h5" gutterBottom>
+          Your blinds measurements:
+        </Typography>
+
+        <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
+          handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
+      </section>
+
+      <section>
+        <Typography variant="h5" gutterBottom>
+          Results
+        </Typography>
+
+        {errorMessage &&
+          <p>{errorMessage}</p>
+        }
+
+        <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
+      </section>
+
+      <section>
+        <Typography variant="h5" gutterBottom>
+          Total
+        </Typography>
+        <p>
+          <Typography variant="body1">
+            ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
+          </Typography>
+        </p>
+      </section>
     </>
   )
 }
