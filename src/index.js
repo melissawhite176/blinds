@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { findMatch } from './list.js'
 import BlindsForm from './components/BlindsForm'
-// import BlindMeasurements from './components/BlindMeasurements'
-import BlindResult from './components/BlindResult'
+import BlindResultTable from './components/BlindResultTable.js'
 
 const Header = () => {
   return (
@@ -71,12 +70,10 @@ const App = () => {
       {errorMessage &&
         <p>{errorMessage}</p>
       }
-      {blinds.length > 0
-        ? blinds.map(blind => <BlindResult key={blind.id} blind={blind} deleteBlind={deleteBlind} />)
-        : <p>Enter width and length, then click on save.</p>
-      }
+      <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
       <h3>Total</h3>
       <p>${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}</p>
+
     </>
   )
 }
