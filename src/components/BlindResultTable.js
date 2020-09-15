@@ -15,23 +15,13 @@ const useStyles = makeStyles({
   },
 });
 
-// function createData(description, mWidth, mLength, cWidth, aWidth, length, price, del) {
-//   return { description, mWidth, mLength, cWidth, aWidth, length, price, del };
-// }
-
-// const blinds = [
-//   createData('example: add a window description', 32.21, 61.57, 31, 30.5, 64, 44.98,
-//     <IconButton aria-label="delete">
-//       <DeleteIcon />
-//     </IconButton>),
-// ];
 
 const BlindResultTable = ({ blinds, deleteBlind }) => {
   const classes = useStyles()
 
   return (
     <Paper>
-      <Table>
+      <Table className={classes.table} aria-label='blinds results tables'>
         <TableHead>
           <TableRow>
             <TableCell>Window Description</TableCell>
