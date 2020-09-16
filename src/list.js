@@ -310,7 +310,9 @@ function findMatch(width, length, description) {
       measuredWidth: width,
       measuredLength: length,
       description: description,
-      price: lengthResult.price
+      price: lengthResult.price,
+      idealWidth: idealWidth,
+      trim: trim
     }
   } else {
     return {
