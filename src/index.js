@@ -12,7 +12,7 @@ import './index.css'
 const Footer = () => {
   return (
     <Typography variant="overline" display="block" gutterBottom>
-      <span>App created by <a href="https://github.com/melissawhite176">Melissa </a><span role="img" aria-label="Love">❤️</span></span><br />
+      <span>App created by <a href="https://github.com/melissawhite176">Melissa</a> <span role="img" aria-label="Love">❤️</span></span><br />
       <span>Photo by <a href="https://unsplash.com/@runejohs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Rune Enstad</a> on <a href="https://unsplash.com/s/photos/window-kitchen?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
     </Typography>
   )
