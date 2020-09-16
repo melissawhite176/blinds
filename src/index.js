@@ -22,7 +22,9 @@ const App = () => {
   const [newWidth, setWidth] = useState(32.22)
   const [newLength, setLength] = useState(64.23)
   const [newDescription, setDescription] = useState('tall window next to entrance door')
-  const [blinds, setBlinds] = useState([])
+  const [blinds, setBlinds] = useState(
+    JSON.parse(window.localStorage.getItem('blinds')) || []
+  )
   const [errorMessage, setErrorMessage] = useState('')
 
 
@@ -42,14 +44,19 @@ const App = () => {
           setErrorMessage(null)
         }, 5000)
       } else {
-        setBlinds([match, ...blinds])
+        setAndStoreBlinds([match, ...blinds])
       }
     }
   }
 
+  const setAndStoreBlinds = (blinds) => {
+    setBlinds(blinds)
+    window.localStorage.setItem('blinds', JSON.stringify(blinds))
+  }
+
   const deleteBlind = (id) => {
     const newList = blinds.filter(blind => blind.id !== id)
-    setBlinds(newList)
+    setAndStoreBlinds(newList)
   }
 
   const handleWidthChange = (event) => {
