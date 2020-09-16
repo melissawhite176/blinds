@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,22 +15,18 @@ const useStyles = makeStyles({
   },
 });
 
-
-const BlindResultTable = ({ blinds, deleteBlind }) => {
+const TrimResultTable = ({ blinds, deleteBlind }) => {
   const classes = useStyles()
 
   return (
     <Paper>
-      <Table className={classes.table} aria-label='blinds results table'>
+      <Table className={classes.table} aria-label='trim results table'>
         <TableHead>
           <TableRow>
             <TableCell>Window Description</TableCell>
-            <TableCell align="right">Measured Width&nbsp;(in)</TableCell>
-            <TableCell align="right">Common Width&nbsp;(in)</TableCell>
             <TableCell align="right">Actual Width&nbsp;(in)</TableCell>
-            <TableCell align="right">Measured Length&nbsp;(in)</TableCell>
-            <TableCell align="right">Length&nbsp;(in)</TableCell>
-            <TableCell align="right">Price&nbsp;($)</TableCell>
+            <TableCell align="right">Ideal Width&nbsp;(in)</TableCell>
+            <TableCell align="right">Recommended Trim (Actual - Ideal)&nbsp;(in)</TableCell>
             <TableCell align="right">Delete</TableCell>
           </TableRow>
         </TableHead>
@@ -40,12 +36,10 @@ const BlindResultTable = ({ blinds, deleteBlind }) => {
               <TableCell component="th" scope="row">
                 {blind.description}
               </TableCell>
-              <TableCell align="right">{blind.measuredWidth}</TableCell>
-              <TableCell align="right">{blind.width}</TableCell>
               <TableCell align="right">{blind.actualWidth}</TableCell>
-              <TableCell align="right">{blind.measuredLength}</TableCell>
-              <TableCell align="right">{blind.length}</TableCell>
-              <TableCell align="right">{blind.price.toFixed(2)}</TableCell>
+              <TableCell align="right">{blind.idealWidth}</TableCell>
+              <TableCell align="right">{blind.trim}</TableCell>
+
               <TableCell align="right">
                 <IconButton aria-label="delete" onClick={() => deleteBlind(blind.id)}>
                   <DeleteIcon />
@@ -59,4 +53,4 @@ const BlindResultTable = ({ blinds, deleteBlind }) => {
   )
 }
 
-export default BlindResultTable
+export default TrimResultTable

@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { findMatch } from './list.js'
+import Header from './components/Header'
 import BlindsForm from './components/BlindsForm'
 import BlindResultTable from './components/BlindResultTable.js'
+import TrimResultTable from './components/TrimResultTable'
 import Typography from '@material-ui/core/Typography';
 import './index.css'
 
 
-const Header = () => {
+const Footer = () => {
   return (
-    <Typography variant="h2" gutterBottom>
-      Trim-N-Take Blinds
+    <Typography variant="overline" display="block" gutterBottom>
+      <span>App created by <a href="https://github.com/melissawhite176">Melissa </a><span role="img" aria-label="Love">❤️</span></span><br />
+      <span>Photo by <a href="https://unsplash.com/@runejohs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Rune Enstad</a> on <a href="https://unsplash.com/s/photos/window-kitchen?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
     </Typography>
   )
 }
@@ -62,38 +65,51 @@ const App = () => {
   return (
     <>
       <Header />
-
-      <section>
-        <Typography variant="h5" gutterBottom>
-          Your blinds measurements:
+      <main>
+        <section>
+          <Typography variant="h5" gutterBottom>
+            Your window measurements:
         </Typography>
 
-        <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
-          handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
-      </section>
+          <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
+            handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
+        </section>
 
-      <section>
-        <Typography variant="h5" gutterBottom>
-          Results
+        <section>
+          <Typography variant="h5" gutterBottom>
+            Results
         </Typography>
 
-        {errorMessage &&
-          <p>{errorMessage}</p>
-        }
+          {errorMessage &&
+            <p>{errorMessage}</p>
+          }
 
-        <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
-      </section>
+          <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
+        </section>
 
-      <section>
-        <Typography variant="h5" gutterBottom>
-          Total
+        <section>
+          <Typography variant="h5" gutterBottom>
+            Total
         </Typography>
-        <p>
-          <Typography variant="body1">
-            ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
-          </Typography>
-        </p>
-      </section>
+          <p>
+            <Typography variant="body1">
+              ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
+            </Typography>
+          </p>
+        </section>
+
+
+        <section>
+          <Typography variant="h5" gutterBottom>
+            Trim:
+        </Typography>
+          <TrimResultTable blinds={blinds} deleteBlind={deleteBlind} />
+
+        </section>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   )
 }
@@ -102,3 +118,4 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
+
