@@ -280,8 +280,6 @@ const blinds = [
 // console.log('idealWidth:', idealWidth)
 // console.log('trim:', trim)
 
-let _idCount = 0
-
 
 function findMatch(width, length, description) {
   console.log('Your blind is:', width, 'x', length, 'inches')
@@ -326,7 +324,7 @@ function findMatch(width, length, description) {
 
   if (commonResult && lengthResult) {
     return {
-      id: _idCount++,
+      id: Date.now(),
       width: commonResult.common,
       actualWidth: commonResult.actual,
       length: lengthResult.length,

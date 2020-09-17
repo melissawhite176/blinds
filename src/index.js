@@ -76,7 +76,7 @@ const App = () => {
         <section>
           <Typography variant="h5" gutterBottom>
             Your window measurements:
-        </Typography>
+          </Typography>
 
           <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
             handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
@@ -85,7 +85,7 @@ const App = () => {
         <section>
           <Typography variant="h5" gutterBottom>
             Results
-        </Typography>
+          </Typography>
 
           {errorMessage &&
             <p>{errorMessage}</p>
@@ -97,12 +97,10 @@ const App = () => {
         <section>
           <Typography variant="h5" gutterBottom>
             Total
-        </Typography>
-          <p>
-            <Typography variant="body1">
+          </Typography>
+          <Typography variant="body1">
               ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
-            </Typography>
-          </p>
+          </Typography>
         </section>
 
 
