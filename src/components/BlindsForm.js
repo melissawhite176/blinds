@@ -1,8 +1,7 @@
 import React from 'react'
-import { green } from '@material-ui/core/colors'
+import { makeStyles } from '@material-ui/core/styles'
 import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
-import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -44,7 +43,7 @@ const BlindsForm = ({ addMeasurements, handleDescriptionChange, handleWidthChang
                     </Grid>
                     <Grid item>
                         <IconButton aria-label="Submit" onClick={addMeasurements}>
-                            <Icon style={{ color: green[600] }} fontSize="large">add_circle</Icon>
+                            <Icon color="secondary" fontSize="large">add_circle</Icon>
                         </IconButton>
                     </Grid>
                 </Grid>

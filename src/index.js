@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { findMatch } from './list.js'
 import Header from './components/Header'
 import BlindsForm from './components/BlindsForm'
@@ -7,6 +9,19 @@ import BlindResultTable from './components/BlindResultTable.js'
 import TrimResultTable from './components/TrimResultTable'
 import Typography from '@material-ui/core/Typography';
 import './index.css'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#2f5c96',
+    },
+    secondary: {
+      main: '#966a2f',
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+  },
+});
 
 
 const Footer = () => {
@@ -71,15 +86,22 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <appbar>
+        <ThemeProvider theme={theme}>
+          <Header />
+        </ThemeProvider>
+      </appbar>
       <main>
         <section>
           <Typography variant="h5" gutterBottom>
             Your window measurements:
           </Typography>
 
-          <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
-            handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
+
+          <ThemeProvider theme={theme}>
+            <BlindsForm addMeasurements={addMeasurements} handleDescriptionChange={handleDescriptionChange}
+              handleLengthChange={handleLengthChange} handleWidthChange={handleWidthChange} />
+          </ThemeProvider>
         </section>
 
         <section>
@@ -99,7 +121,7 @@ const App = () => {
             Total
           </Typography>
           <Typography variant="body1">
-              ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
+            ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
           </Typography>
         </section>
 
