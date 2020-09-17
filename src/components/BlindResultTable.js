@@ -8,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import LinkIcon from '@material-ui/icons/Link';
 
 const useStyles = makeStyles({
   table: {
@@ -24,6 +25,7 @@ const BlindResultTable = ({ blinds, deleteBlind }) => {
       <Table className={classes.table} aria-label='blinds results table'>
         <TableHead>
           <TableRow>
+            <TableCell align="right">Product</TableCell>
             <TableCell>Window Description</TableCell>
             <TableCell align="right">Measured Width&nbsp;(in)</TableCell>
             <TableCell align="right">Common Width&nbsp;(in)</TableCell>
@@ -37,9 +39,12 @@ const BlindResultTable = ({ blinds, deleteBlind }) => {
         <TableBody>
           {blinds.map(blind => (
             <TableRow key={blind.id}>
-              <TableCell component="th" scope="row">
-                {blind.description}
+              <TableCell align="right">
+                <IconButton aria-label="url" href={blind.url} target="_blank">
+                  <LinkIcon />
+                </IconButton>
               </TableCell>
+              <TableCell component="th" scope="row">{blind.description}</TableCell>
               <TableCell align="right">{blind.measuredWidth}</TableCell>
               <TableCell align="right">{blind.width}</TableCell>
               <TableCell align="right">{blind.actualWidth}</TableCell>

@@ -6,15 +6,18 @@ const blinds = [
     lengths: [
       {
         length: 48,
-        price: 43.98
+        price: 43.98,
+        url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-35-in-Actual-34-5-in-x-48-in/1000576237'
       },
       {
         length: 64,
-        price: 48.98
+        price: 48.98,
+        url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-35-in-Actual-34-5-in-x-64-in/1000576741'
       },
       {
         length: 72,
-        price: 54.98
+        price: 54.98,
+        url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-35-in-Actual-34-5-in-x-72-in/1000576765'
       }
     ]
   },
@@ -25,7 +28,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 47.98
+          price: 47.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-34-in-Actual-33-5-in-x-64-in/1000576739'
         }
       ]
   },
@@ -36,11 +40,13 @@ const blinds = [
       [
         {
           length: 64,
-          price: 109.00
+          price: 109.00,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-72-in-Actual-71-5-in-x-64-in/1000576761'
         },
         {
           length: 72,
-          price: 117.00
+          price: 117.00,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-72-in-Actual-71-5-in-x-72-in/1000576769'
         }
       ]
   },
@@ -51,11 +57,13 @@ const blinds = [
       [
         {
           length: 64,
-          price: 44.98
+          price: 44.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-31-in-Actual-30-5-in-x-64-in/1000576737'
         },
         {
           length: 72,
-          price: 52.98
+          price: 52.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-31-in-Actual-30-5-in-x-72-in/1001461642'
         }
       ]
   },
@@ -66,11 +74,13 @@ const blinds = [
       [
         {
           length: 64,
-          price: 49.98
+          price: 49.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-36-in-Actual-35-5-in-x-64-in/1000576743'
         },
         {
           length: 72,
-          price: 56.98
+          price: 56.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-36-in-Actual-35-5-in-x-72-in/1000576767'
         }
       ]
   },
@@ -81,7 +91,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 57.98
+          price: 57.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-39-in-Actual-38-5-in-x-64-in/1000576745'
         }
       ]
   },
@@ -92,11 +103,13 @@ const blinds = [
       [
         {
           length: 48,
-          price: 55.98
+          price: 55.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-47-in-Actual-46-5-in-x-48-in/1000576239'
         },
         {
           length: 64,
-          price: 69.98
+          price: 69.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-47-in-Actual-46-5-in-x-64-in/1000576749'
         }
       ]
   },
@@ -107,7 +120,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 79.98
+          price: 79.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-52-in-Actual-51-5-in-x-64-in/1000576751'
         }
       ]
   },
@@ -118,7 +132,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 39.98
+          price: 39.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-27-in-Actual-26-5-in-x-64-in/1000576735'
         }
       ]
   },
@@ -129,7 +144,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 67.98
+          price: 67.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-43-in-Actual-42-5-in-x-64-in/1000576747'
         }
       ]
   },
@@ -140,7 +156,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 87.98
+          price: 87.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-57-in-Actual-56-5-in-x-64-in/1000576753'
         }
       ]
   },
@@ -151,11 +168,13 @@ const blinds = [
       [
         {
           length: 48,
-          price: 68.98
+          price: 68.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-59-in-Actual-58-5-in-x-48-in/1000576241'
         },
         {
           length: 64,
-          price: 96.98
+          price: 96.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-59-in-Actual-58-5-in-x-64-in/1000576755'
         }
       ]
   },
@@ -166,7 +185,8 @@ const blinds = [
       [
         {
           length: 64,
-          price: 97.98
+          price: 97.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-62-in-Actual-61-5-in-x-64-in/1000576757'
         }
       ]
   },
@@ -177,15 +197,18 @@ const blinds = [
       [
         {
           length: 64,
-          price: 32.98
+          price: 32.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-23-in-Actual-22-5-in-x-64-in/1000575993'
         },
         {
           length: 72,
-          price: 38.98
+          price: 38.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-23-in-Actual-22-5-in-x-72-in/1000576763'
         },
         {
           length: 48,
-          price: 29.98
+          price: 29.98,
+          url: 'https://www.lowes.com/pd/LEVOLOR-Trim-Go-2-in-Cordless-White-Faux-Wood-Room-Darkening-Blinds-Common-23-in-Actual-22-5-in-x-48-in/1000576235'
         }
       ]
   }
@@ -312,7 +335,8 @@ function findMatch(width, length, description) {
       description: description,
       price: lengthResult.price,
       idealWidth: idealWidth,
-      trim: trim
+      trim: trim,
+      url: lengthResult.url
     }
   } else {
     return {
