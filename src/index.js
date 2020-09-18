@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import { ThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { findMatch } from './list.js'
+import { findMatch } from './findBlind.js'
 import Header from './components/Header'
 import BlindsForm from './components/BlindsForm'
 import BlindResultTable from './components/BlindResultTable.js'
@@ -86,11 +86,10 @@ const App = () => {
 
   return (
     <>
-      <appbar>
-        <ThemeProvider theme={theme}>
-          <Header />
-        </ThemeProvider>
-      </appbar>
+      <ThemeProvider theme={theme}>
+        <Header />
+      </ThemeProvider>
+
       <main>
         <section>
           <Typography variant="h5" gutterBottom>
