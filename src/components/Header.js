@@ -98,9 +98,12 @@ const Header = () => {
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-            This app is meant for blinds contractors and the DIY home fixer-uppers who want to install blinds on a budget.
-            You can easily keep track of your windows measurements and instantly get recommended results.
-            Blinds are based on LEVELOR Trim+Go products sold exclusively at Lowe's home stores. 
+            This app is meant for blinds contractors and
+            for the home DIY-ers who want to purchase and install
+            blinds in their home. You can easily keep track of your
+            windows measurements and instantly get recommended results.
+            Blinds are based on LEVELOR Trim+Go products
+            sold exclusively at Lowe's home stores.
           </Typography>
           <Typography variant="overline" display="block" gutterBottom>
             <span>App created by <a href="https://github.com/melissawhite176">Melissa</a> <span role="img" aria-label="Love">❤️</span></span><br />
