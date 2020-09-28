@@ -23,7 +23,8 @@ function findMatch(width, length, description) {
   const commonResult = sorted.find(blind => blind.common + widthCushion >= width)
 
   let idealWidth = width - 0.5
-  let trim = (commonResult.actual - idealWidth).toFixed(2)
+  let trimTotal = (commonResult.actual - idealWidth).toFixed(2)
+  let trimSide = (trimTotal / 2).toFixed(2)
 
   const sortedLengths = [...commonResult.lengths].sort((a, b) => a.length - b.length)
 
@@ -43,7 +44,8 @@ function findMatch(width, length, description) {
       description: description,
       price: lengthResult.price,
       idealWidth: idealWidth,
-      trim: trim,
+      trim: trimTotal,
+      trimSide: trimSide,
       url: lengthResult.url
     }
   } else {

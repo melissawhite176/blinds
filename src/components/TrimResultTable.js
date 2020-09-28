@@ -62,6 +62,7 @@ const TrimResultTable = ({ blinds, deleteBlind }) => {
 
   return (
     <>
+      
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label='trim results table'>
           <TableHead>
@@ -69,7 +70,7 @@ const TrimResultTable = ({ blinds, deleteBlind }) => {
               <StyledTableCell>Window Description</StyledTableCell>
               <StyledTableCell align="right">Actual Width&nbsp;(in)</StyledTableCell>
               <StyledTableCell align="right">Ideal Width&nbsp;(in)</StyledTableCell>
-              <StyledTableCell align="right">Recommended Trim (Actual - Ideal)&nbsp;(in)</StyledTableCell>
+              <StyledTableCell align="right">Recommended Trim (per side)&nbsp;(in)</StyledTableCell>
               <StyledTableCell align="right">Delete</StyledTableCell>
             </StyledTableRow>
           </TableHead>
@@ -81,7 +82,7 @@ const TrimResultTable = ({ blinds, deleteBlind }) => {
                 </StyledTableCell>
                 <StyledTableCell align="right">{blind.actualWidth}</StyledTableCell>
                 <StyledTableCell align="right">{blind.idealWidth}</StyledTableCell>
-                <StyledTableCell align="right"><b>{blind.trim}</b></StyledTableCell>
+                <StyledTableCell align="right"><b>{blind.trimSide}</b></StyledTableCell>
                 <StyledTableCell align="right">
                   <IconButton aria-label="delete" onClick={() => handleClickOpen(blind)}>
                     <DeleteIcon />
