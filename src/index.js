@@ -9,6 +9,7 @@ import BlindResultTable from './components/BlindResultTable.js'
 import TrimResultTable from './components/TrimResultTable'
 import Typography from '@material-ui/core/Typography';
 import './index.css'
+import BlindTrimPopover from './components/BlindTrimPopover.js';
 
 const theme = createMuiTheme({
   palette: {
@@ -120,6 +121,7 @@ const App = () => {
           <Typography variant="h5" gutterBottom>
             Trim
         </Typography>
+          <BlindTrimPopover/>
           <TrimResultTable blinds={blinds} deleteBlind={deleteBlind} />
         </section>
 
