@@ -31,14 +31,14 @@ const BlindsForm = ({ addMeasurements, handleDescriptionChange, handleWidthChang
                 <Grid container spacing={3}>
                     <Grid item>
                         <TextField id="standard-basic" label="Description"
-                            placeholder='tall window next to entrance door' onChange={handleDescriptionChange} />
+                            placeholder='kitchen sink window' onChange={handleDescriptionChange} />
                     </Grid>
                     <Grid item>
-                        <TextField id="standard-basic" label="Width"
+                        <TextField id="standard-basic" label="Width&nbsp;(in)"
                             placeholder='32.21' onChange={handleWidthChange} />
                     </Grid>
                     <Grid item>
-                        <TextField id="standard-basic" label="Length"
+                        <TextField id="standard-basic" label="Length&nbsp;(in)"
                             placeholder='61.57' onChange={handleLengthChange} />
                     </Grid>
                     <Grid item>

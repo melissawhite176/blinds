@@ -115,6 +115,15 @@ const App = () => {
           <BlindResultTable blinds={blinds} deleteBlind={deleteBlind} />
         </section>
 
+
+        <section>
+          <Typography variant="h5" gutterBottom>
+            Trim
+        </Typography>
+          <TrimResultTable blinds={blinds} deleteBlind={deleteBlind} />
+        </section>
+
+
         <section>
           <Typography variant="h5" gutterBottom>
             Total
@@ -122,15 +131,6 @@ const App = () => {
           <Typography variant="body1">
             ${blinds.reduce((total, blind) => blind.price + total, 0).toFixed(2)}
           </Typography>
-        </section>
-
-
-        <section>
-          <Typography variant="h5" gutterBottom>
-            Trim:
-        </Typography>
-          <TrimResultTable blinds={blinds} deleteBlind={deleteBlind} />
-
         </section>
       </main>
       <footer>
