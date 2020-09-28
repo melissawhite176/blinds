@@ -42,13 +42,15 @@ const BlindsForm = ({ addMeasurements, handleDescriptionChange, handleWidthChang
                             placeholder='61.57' onChange={handleLengthChange} />
                     </Grid>
                     <Grid item>
-                        <IconButton aria-label="Submit" onClick={addMeasurements}>
+                        <IconButton aria-label="Submit" type="submit">
                             <Icon color="secondary" fontSize="large">add_circle</Icon>
                         </IconButton>
                     </Grid>
                 </Grid>
             </form>
         </Paper>
+
+
     )
 }
 
