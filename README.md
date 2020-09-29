@@ -1,3 +1,7 @@
+# Trim & Take Blinds Web Application
+
+[https://trimandtake.netlify.app/](https://trimandtake.netlify.app/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
